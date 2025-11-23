@@ -2,6 +2,8 @@
 const nextConfig = {
   reactStrictMode: true,
   output: 'export',
+  basePath: '/now_you_see_me_frontend',
+  assetPrefix: '/now_you_see_me_frontend',
   images: {
     unoptimized: true,
   },
