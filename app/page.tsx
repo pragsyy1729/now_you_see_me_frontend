@@ -42,13 +42,15 @@ export default function Home() {
 
     initializeBackend();
 
-    // Poll backend health every 10 seconds
+    // Poll backend health every 1 second to keep it awake and show real-time status
     const interval = setInterval(async () => {
       const isHealthy = await apiService.checkHealth();
       setBackendOnline(isHealthy);
-    }, 10000);
+    }, 1000);
 
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+    };
   }, []);
 
   const handleImageUpload = async (file: File) => {
