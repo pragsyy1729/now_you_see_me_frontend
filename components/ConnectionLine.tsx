@@ -16,7 +16,7 @@ export const ConnectionLine: React.FC<ConnectionLineProps> = ({
   isActive,
   flowSpeed = 1,
 }) => {
-  const lineRef = useRef<THREE.Line>(null);
+  const lineRef = useRef<any>(null);
   const particlesRef = useRef<THREE.Points>(null);
 
   // Create flowing particles along the line
